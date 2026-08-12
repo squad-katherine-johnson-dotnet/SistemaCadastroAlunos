@@ -4,6 +4,7 @@ double[] notas1 = new double[10];
 double[] notas2 = new double[10];
 
 int quantidadeAlunos = 0;
+int tentativasErro = 0;
 
 string nome;
 int idade;
@@ -66,10 +67,12 @@ for (int i = 0; i < 10; i++) {
     notas1[i] = nota1;
     notas2[i] = nota2;
 }
+
+quantidadeAlunos = nomes.Length;
+
 int opcao = -1;
 
-while (opcao != 0 && tentativasErro < 3)
-{
+while (opcao != 0 && tentativasErro < 3) {
     Console.WriteLine("");
     Console.WriteLine("=================================");
     Console.WriteLine("          MENU PRINCIPAL         ");
@@ -85,33 +88,30 @@ while (opcao != 0 && tentativasErro < 3)
 
     opcao = int.Parse(Console.ReadLine()!);
 
-    if (opcao == 1)
-    {
-        Console.WriteLine("Lista de Alunos...");
-        tentativasErro = 0;
-    }
-    else if (opcao == 2)
-    {
-        Console.WriteLine("Buscar Aluno...");
-        tentativasErro = 0;
-    }
-    else if (opcao == 3)
-    {
-        Console.WriteLine("====== ALUNOS APROVADOS ======");
-        int totalAprovados = 0;
-        tentativasErro = 0;
-
-        // Integrante 2 - Listagem
+    if (opcao == 1) {
         Console.WriteLine("\n=================================");
         Console.WriteLine("             LISTAGEM              ");
         Console.WriteLine("===================================");
-        for (int i = 0; i < quantidadeAlunos; i++)
-        {
+        for (int i = 0; i < quantidadeAlunos; i++) {
             double media = (notas1[i] + notas2[i]) / 2.0;
             Console.WriteLine($"Nome: {nomes[i]}");
             Console.WriteLine($"Idade: git{idades[i]}");
             Console.WriteLine($"Média: {media:F1}\n");
+            tentativasErro = 0;
         }
+    }
+    else if (opcao == 2) {
+        Console.WriteLine("Buscar Aluno...");
+        tentativasErro = 0;
+    }
+    else if (opcao == 3) {
+        Console.WriteLine("====== ALUNOS APROVADOS ======");
+        int totalAprovados = 0;
+        tentativasErro = 0;
+    }
+}
+        // Integrante 2 - Listagem
+
       
 
 
