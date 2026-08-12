@@ -10,11 +10,13 @@ string nome;
 int idade;
 double nota1, nota2;
 
-Console.WriteLine("==== CADASTRO DE ALUNOS ====");
+Console.WriteLine("=================================");
+Console.WriteLine("      CADASTRO DE ALUNOS");
+Console.WriteLine("=================================");
 
 for (int i = 0; i < 10; i++) {
 
-    Console.WriteLine($"Insira os dados do aluno {i + 1}:");
+    Console.WriteLine($"\nInsira os dados do aluno {i + 1}:");
 
 
     while (true) {
@@ -95,7 +97,7 @@ while (opcao != 0 && tentativasErro < 3) {
         for (int i = 0; i < quantidadeAlunos; i++) {
             double media = (notas1[i] + notas2[i]) / 2.0;
             Console.WriteLine($"Nome: {nomes[i]}");
-            Console.WriteLine($"Idade: git{idades[i]}");
+            Console.WriteLine($"Idade: {idades[i]}");
             Console.WriteLine($"Média: {media:F1}\n");
             tentativasErro = 0;
         }
@@ -110,36 +112,3 @@ while (opcao != 0 && tentativasErro < 3) {
         tentativasErro = 0;
     }
 }
-        // Integrante 2 - Listagem
-
-      
-
-
-// ==========================
-// CADASTRO
-// ==========================
-
-
-// ==========================
-// MENU
-// ==========================
-
-
-// ==========================
-// LISTAGEM
-// ==========================
-
-
-// ==========================
-// BUSCA
-// ==========================
-
-
-// ==========================
-// APROVADOS
-// ==========================
-
-
-// ==========================
-// MÉDIA DA TURMA
-// ==========================
