@@ -106,9 +106,27 @@ while (opcao != 0 && tentativasErro < 3) {
         Console.WriteLine("Buscar Aluno...");
         tentativasErro = 0;
     }
-    else if (opcao == 3) {
-        Console.WriteLine("====== ALUNOS APROVADOS ======");
+    else if (opcao == 3)
+    {
+        Console.WriteLine("\n=================================");
+        Console.WriteLine("        ALUNOS APROVADOS");
+        Console.WriteLine("=================================");
+
         int totalAprovados = 0;
         tentativasErro = 0;
+
+        for (int i = 0; i < quantidadeAlunos; i++)
+        {
+            double media = (notas1[i] + notas2[i]) / 2.0;
+
+            if (media >= 7)
+            {
+                Console.WriteLine($"{nomes[i]} - Média: {media:F1}");
+                totalAprovados++;
+            }
+        }
+
+        Console.WriteLine("---------------------------------");
+        Console.WriteLine($"Total de aprovados: {totalAprovados}");
     }
 }
