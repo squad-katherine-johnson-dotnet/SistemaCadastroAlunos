@@ -105,6 +105,34 @@ while (opcao != 0 && tentativasErro < 3) {
     else if (opcao == 2) {
         Console.WriteLine("Buscar Aluno...");
         tentativasErro = 0;
+
+        Console.Write("Digite o nome do aluno que deseja buscar: ");
+        string nomeBusca = Console.ReadLine();
+
+        bool encontrado = false;
+
+        for (int i = 0; i < 10; i++)
+        {
+            if (nomes[i].ToLower() == nomeBusca.ToLower())
+            {
+                Console.WriteLine("====== ALUNO ENCONTRADO ======");
+                Console.WriteLine("Nome: " + nomes[i]);
+                Console.WriteLine("Idade: " + idades[i]);
+                Console.WriteLine("Nota 1: " + notas1[i]);
+                Console.WriteLine("Nota 2: " + notas2[i]);
+
+                double media = (notas1[i] + notas2[i]) / 2;
+                Console.WriteLine("Média: " + media);
+
+                encontrado = true;
+                break;
+            }
+        }
+
+        if (!encontrado)
+        {
+            Console.WriteLine("Aluno não encontrado.");
+        }
     }
     else if (opcao == 3)
     {
